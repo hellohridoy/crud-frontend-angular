@@ -2,7 +2,9 @@
   
 <!-- src/app/student-list/student-list.component.html -->
 <div class="student-list ">
+   <div class="button-container">
     <button mat-raised-button color="primary"  (click)="openDialog()">Add Student</button>
+   </div> 
     <mat-table [dataSource]="students" class="mat-elevation-z8">
       <!-- Columns -->
       <ng-container matColumnDef="name">

@@ -1,5 +1,14 @@
 .button-container {
   display: flex;
-  justify-content: center;
-  margin-top: 20px; /* Adjust margin as needed */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically if needed */
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.table-container {
+  margin-top: 20px;
 }
