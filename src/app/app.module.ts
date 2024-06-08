@@ -17,12 +17,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentDialogComponent } from './student-dialog/student-dialog.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
-    StudentDialogComponent
+    StudentDialogComponent,
+    StudentDetailsComponent
   ],
   imports: [
     BrowserModule,

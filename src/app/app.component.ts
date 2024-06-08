@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { StudentService } from './student.service';
 import { StudentDialogComponent } from './student-dialog/student-dialog.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.getAllStudents();
   }
-
+  viewDetails(student: any): void {
+    this.dialog.open(StudentDetailsComponent, {
+      data: student
+    });}
   getAllStudents() {
     this.studentService.getAll().subscribe(data => {
       this.dataSource.data = data;
