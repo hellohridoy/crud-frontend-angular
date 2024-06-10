@@ -1,56 +1,30 @@
-<h1 mat-dialog-title>Student Details</h1>
-<div mat-dialog-content>
-  <mat-list>
-    <mat-list-item>
-      <strong>ID:</strong> {{data.id}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>Name:</strong> {{data.name}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>Contact Number:</strong> {{data.contactNumber}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>Address:</strong> {{data.address}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>Gender:</strong> {{data.gender}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>Age:</strong> {{data.age}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>NID:</strong> {{data.nid}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>SSC Result:</strong> {{data.sscResult}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>HSC Result:</strong> {{data.hscResult}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>Admission Status:</strong> {{data.admissionStatus}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>Created At:</strong> {{data.createdAt | date}}
-    </mat-list-item>
-    <mat-divider></mat-divider>
-    <mat-list-item>
-      <strong>Updated At:</strong> {{data.updatedAt | date}}
-    </mat-list-item>
-  </mat-list>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details</title>
+</head>
+<body>
+
+<div class="details-container">
+  <h2>Student Details</h2>
+  <div class="details">
+    <p><strong>ID:</strong> {{ student.id }}</p>
+    <p><strong>Name:</strong> {{ student.name }}</p>
+    <p><strong>Contact Number:</strong> {{ student.contactNumber }}</p>
+    <p><strong>Address:</strong> {{ student.address }}</p>
+    <p><strong>Gender:</strong> {{ student.gender }}</p>
+    <p><strong>Age:</strong> {{ student.age }}</p>
+    <p><strong>NID:</strong> {{ student.nid }}</p>
+    <p><strong>SSC Result:</strong> {{ student.sscResult }}</p>
+    <p><strong>HSC Result:</strong> {{ student.hscResult }}</p>
+    <p><strong>Admission Status:</strong> {{ student.admissionStatus }}</p>
+    <p><strong>Created At:</strong> {{ student.createdAt }}</p>
+    <p><strong>Updated At:</strong> {{ student.updatedAt }}</p>
+  </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
+
+</body>
+</html>
 

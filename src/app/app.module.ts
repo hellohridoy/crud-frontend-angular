@@ -1,49 +1,55 @@
 // src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { MatDialogModule } from '@angular/material/dialog';
+import { RouterModule, Routes } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
-import { MatSelectModule } from '@angular/material/select';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StudentListComponent } from './student-list/student-list.component';
-import { StudentDialogComponent } from './student-dialog/student-dialog.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
+import { StudentUpdateComponent } from './student-update/student-update.component';
+import { StudentAddComponent } from './student-add/student-add.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatSelectModule} from "@angular/material/select";
+
+const routes: Routes = [
+  { path: 'students', component: StudentListComponent },
+  { path: 'students/add', component: StudentAddComponent },
+  { path: 'students/:id/details', component: StudentDetailsComponent },
+  { path: 'students/update/:id', component: StudentUpdateComponent },
+  { path: '', redirectTo: '/students', pathMatch: 'full' }, // Default route
+  { path: '**', redirectTo: '/students' } // Wildcard route for a 404 page
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
-    StudentDialogComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    StudentUpdateComponent,
+    StudentAddComponent,
+    NavbarComponent,
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatTableModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatIconModule
+    MatToolbarModule,
+    MatButtonModule,
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [StudentDialogComponent]
+  entryComponents: [NavbarComponent]
 })
 export class AppModule { }

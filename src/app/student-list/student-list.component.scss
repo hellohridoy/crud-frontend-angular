@@ -1,0 +1,42 @@
+/* CSS for responsive design */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Button styles */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #6a786a;
+}
+
+/* Responsive design for buttons */
+@media screen and (max-width: 600px) {
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
