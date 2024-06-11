@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'students', component: StudentListComponent },
   { path: 'students/add', component: StudentAddComponent },
   { path: 'students/:id/details', component: StudentDetailsComponent },
-  { path: 'students/update/:id', component: StudentUpdateComponent },
+  { path: 'students/:id/update', component: StudentUpdateComponent },
   { path: '', redirectTo: '/students', pathMatch: 'full' }, // Default route
   { path: '**', redirectTo: '/students' } // Wildcard route for a 404 page
 ];

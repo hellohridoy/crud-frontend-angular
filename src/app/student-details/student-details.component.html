@@ -4,27 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Details</title>
+
 </head>
 <body>
 
 <div class="details-container">
   <h2>Student Details</h2>
   <div class="details">
-    <p><strong>ID:</strong> {{ student.id }}</p>
-    <p><strong>Name:</strong> {{ student.name }}</p>
-    <p><strong>Contact Number:</strong> {{ student.contactNumber }}</p>
-    <p><strong>Address:</strong> {{ student.address }}</p>
-    <p><strong>Gender:</strong> {{ student.gender }}</p>
-    <p><strong>Age:</strong> {{ student.age }}</p>
-    <p><strong>NID:</strong> {{ student.nid }}</p>
-    <p><strong>SSC Result:</strong> {{ student.sscResult }}</p>
-    <p><strong>HSC Result:</strong> {{ student.hscResult }}</p>
-    <p><strong>Admission Status:</strong> {{ student.admissionStatus }}</p>
-    <p><strong>Created At:</strong> {{ student.createdAt }}</p>
-    <p><strong>Updated At:</strong> {{ student.updatedAt }}</p>
+    <div class="detail-item">
+      <strong>ID:</strong>
+      <span>{{ student.id }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Name:</strong>
+      <span>{{ student.name }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Contact Number:</strong>
+      <span>{{ student.contactNumber }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Address:</strong>
+      <span>{{ student.address }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Gender:</strong>
+      <span>{{ student.gender }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Age:</strong>
+      <span>{{ student.age }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>NID:</strong>
+      <span>{{ student.nid }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>SSC Result:</strong>
+      <span>{{ student.sscResult }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>HSC Result:</strong>
+      <span>{{ student.hscResult }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Admission Status:</strong>
+      <span>{{ student.admissionStatus }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Created At:</strong>
+      <span>{{ student.createdAt }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Updated At:</strong>
+      <span>{{ student.updatedAt }}</span>
+    </div>
   </div>
 </div>
 
 </body>
 </html>
-

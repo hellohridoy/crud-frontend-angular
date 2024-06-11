@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { StudentService } from '../student.service';
 import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-student-list',
@@ -11,13 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StudentListComponent implements OnInit {
   students: any[] = [];
-  displayedColumns: string[] = ['name', 'contactNumber', 'address', 'gender', 'age', 'nid', 'sscResult', 'hscResult', 'admissionStatus', 'actions'];
-  private testId: any;
+  showModal = false;
+  studentIdToDelete: any;
 
-  constructor(private studentService: StudentService,private  router:Router,private route: ActivatedRoute) { }
+  constructor(
+    private studentService: StudentService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-
     this.loadStudents();
   }
 
@@ -27,13 +27,28 @@ export class StudentListComponent implements OnInit {
     });
   }
 
-  showDetails(student: any): void {
-    // Navigate to details page with student ID
-    this.router.navigate(['/student-details', student.id]);
-    this.router.navigate(['/student-list']);
+  confirmDelete(studentId: number): void {
+    this.studentIdToDelete = studentId;
+    this.showModal = true;
   }
 
+  closeModal(): void {
+    this.showModal = false;
+    this.studentIdToDelete = null;
+  }
 
-
-
+  deleteStudent(): void {
+    if (this.studentIdToDelete !== null) {
+      this.studentService.deleteStudent(this.studentIdToDelete).subscribe(
+        () => {
+          console.log('Student deleted');
+          this.loadStudents();  // Refresh the student list
+          this.closeModal();
+        },
+        error => {
+          console.error('Error deleting student:', error);
+        }
+      );
+    }
+  }
 }
